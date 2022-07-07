@@ -4,4 +4,4 @@
 
 ## 分类
 一定严格的对脚本类型进行分类
-- 学习：`study - tasks - xxx `
+- 学习：`tasks - study - xxx `
