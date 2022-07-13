@@ -26,10 +26,11 @@ class LogTest:
         """
         import loguru
 
-        loguru.logger.info("# loguru #这是 INFO 输出")
-        loguru.logger.debug("# loguru #这是 DEBUG 输出")
-        loguru.logger.warning("# loguru #这是 WARNING 输出")
-        loguru.logger.error("# loguru #这是 ERROR 输出")
+        loguru.logger.info("# loguru # info 表示程序正常运行,输出常规日志")
+        loguru.logger.debug("# loguru # debug 表示正在调试运行程序,将输出很详细的日志")
+        loguru.logger.warning("# loguru # warning 表示程序发生了一些意外,但是依旧可以正常工作")
+        loguru.logger.error("# loguru # error 表示程序出现严重问题,这个软件已经不能执行部分功能了")
+        loguru.logger.critical("# loguru # critical 表示程序已经无法正常运行")
 
         try:
             # 日志追溯功能
@@ -50,7 +51,9 @@ class LogTest:
     @staticmethod
     def use_logging():
         """
-        1. 全面
+        1. 应用方面全
+        2. 熟知配置的使用需要一定的时间积累
+        相关学习文档: https://www.cnblogs.com/jack-nie-23/p/16465791.html
         Returns:
             None
         """
@@ -62,12 +65,21 @@ class LogTest:
             # filename="demo.log",
             # filemode="w"
         )
-        logging.info("# Logging # 这是 INFO 输出")
-        logging.debug("# Logging # 这是 DEBUG 输出")
-        logging.warning("# Logging # 这是 WARNING 输出")
-        logging.error("# Logging # 这是 ERROR 输出")
+        # 创建 logger 实例
+        #   在不创建实例的情况下,会使用默认实例(root logger)
+        logger = logging.getLogger("logger_name_v1")
 
+        logger.info("# Logging # info 表示程序正常运行,输出常规日志")
+        logger.debug("# Logging # debug 表示正在调试运行程序,将输出很详细的日志")
+        logger.warning("# Logging # warning 表示程序发生了一些意外,但是依旧可以正常工作")
+        logger.error("# Logging # error 表示程序出现严重问题,这个软件已经不能执行部分功能了")
+        logger.critical("# Logging # critical 表示程序已经无法正常运行")
+
+        try:
+            raise ValueError
+        except Exception as e:
+            logger.exception(e)
 
 if __name__ == '__main__':
     lt = LogTest()
-    lt.use_loguru()
+    lt.use_logging()
