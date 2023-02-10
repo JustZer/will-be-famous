@@ -123,12 +123,12 @@ class AsyncAndAwait:
 
     async def func1(self):
         print(1)
-        await asyncio.sleep(2)
+        # await asyncio.sleep(2)
         print(2)
 
     async def func2(self):
         print(3)
-        await asyncio.sleep(2)
+        # await asyncio.sleep(2)
         print(4)
 
     def main(self):
@@ -192,5 +192,5 @@ class TaskObjectStudy:
 
 
 if __name__ == '__main__':
-    async_study = AsynicoStudy()
+    async_study = AsyncAndAwait()
     async_study.main()
