@@ -13,41 +13,8 @@ class GoogleOneSpider(scrapy.Spider):
         meta = {
             "proxy": "https://127.0.0.1:10809"
         }
-        cookies = {
-            "ali_apache_id": "33.1.214.77.1673426776238.198445.8",
-            "xman_t": "b+5SY3uN7q9jTcfW95f5q4TeH13UwFgQXTjiL8mMEf8i5CdGNkGGzj2YYDkUSYIp",
-            "_ga_save": "yes",
-            "ali_apache_track": "",
-            "e_id": "pt100",
-            "cna": "3dDgG0KyCzgCAW+sBs/0ktWe",
-            "_fbp": "fb.1.1673426885349.1650577152",
-            "_gcl_au": "1.1.1046802884.1673426885",
-            "_ym_uid": "1673426886748929099",
-            "_ym_d": "1673426886",
-            "aep_usuc_f": "site=glo&c_tp=USD&region=HK&b_locale=en_US",
-            "xman_f": "zbGLayMs2mpA2ZEFFS6iZ4dmdFT3YWQRfYkPlFNIe+F7RvusLYHo/uizIH13iXV6nH83MlCFDqjyu+7sljz/vLERpzopDUjtdKXteKDYQzbX4dYSu97MbQ==",
-            "xlly_s": "1",
-            "XSRF-TOKEN": "016bb4ce-4ec4-4781-93dc-d520398aa224",
-            "intl_locale": "en_US",
-            "acs_usuc_t": "x_csrf=pk_ca4umrqa0&acs_rt=eced7c713fa143c881b6891e55de0701",
-            "_m_h5_tk": "19a97bb894b0e81b3b497c2bc37fa14a_1674009331079",
-            "_m_h5_tk_enc": "92161686869236880fa086e1a1cf51f2",
-            "_gid": "GA1.2.36609253.1674006723",
-            "_ym_isad": "2",
-            "xman_us_f": "x_locale=en_US&x_l=0&x_c_chg=0&x_as_i=%7B%22aeuCID%22%3A%22%22%2C%22cookieCacheEffectTime%22%3A1673427180728%2C%22isCookieCache%22%3A%22Y%22%2C%22ms%22%3A%220%22%7D&acs_rt=6689399c81474c1e8e594f4d6f9bc81c",
-            "_ga": "GA1.1.6a6f7395-924f-4a0d-bd50-c25246092e85.1673426855260",
-            "cto_bundle": "L3Huel9TVHNOd2pjJTJCZGVUUkFrU2FRTk5YUU9Ya2xvWjloM2JxaUMwMGUxWms3eDN3MldBSFE5Y3RpN1FVd1Fwc2NSd0I3Nk9LVk1jTjVHREh0Q2tyd1F2NzIlMkJBeGJHbXVEakVDeGNKa3FJZm0lMkZDUFIyREF0RXBnYUplRlp4Ync3dllhdUpES0lBd2xUcDd4Vzc1d081aWhsRnclM0QlM0Q",
-            "aep_history": "keywords%5E%0Akeywords%09%0A%0Aproduct_selloffer%5E%0Aproduct_selloffer%091005003653446956%091005005065170979%0932829394958%0932815719981%091005005058037171%091005005058046562%091005005058400604%091005002172052150",
-            "JSESSIONID": "A1592F6F492FF2B3C31E82315BEC2233",
-            "intl_common_forever": "3kcs+8hiM4xv1FX7vleGN1JQxp0aQJYqUE2FLZrMHFaJZJeFYPCiFg==",
-            "_ga_VED1YSGNC7": "GS1.1.1674023062.31.0.1674023063.0.0.0",
-            "isg": "BKys_Yjq47iSbvbPOF0O8qngfYreZVAPPlfOsgboR9f6EU0bLnEJnv7oMdmpmYhn",
-            "l": "fBEzpeDmLmOBXLl-BO5Churza77OWCdb8sPzaNbMiIEGa6wdsFgSzOCeZ8Dw-dtjgT52jetrhWAQudeyPVz38jkDBeYIKTiYwvvD8ews_gLN.",
-            "tfstk": "cmzABpiwwTXcnsBizqIk7DW9YdZOCWXtFIMMWy_P0Um5MFwUCz1mqy4dkHIj1vkAw",
-            "RT": "\"z=1&dm=aliexpress.com&si=2ed790d8-ad1b-4bc3-9281-edc63c412e76&ss=ld10do9k&sl=0&tt=0&bcn=%2F%2F684d0d48.akstat.io%2F&rl=1&ul=9qfa3\""
-        }
         headers = self.get_headers()
-        for product_id in ["1005003662001631", "1005004522340155", "1005003430572017"]:
+        for product_id in ["1005003662001631"]:
             yield scrapy.Request(
                 url="https://www.aliexpress.com/item/{}.html".format(product_id),
                 method="GET",
@@ -69,11 +36,6 @@ class GoogleOneSpider(scrapy.Spider):
                           "application/signed-exchange;v=b3;q=0.9",
                 "Accept-Encoding": "gzip, deflate, br",
                 "Accept-Language": "zh-CN,zh;q=0.9",
-                "Cache-Control": "max-age=0",
-                "sec-fetch-dest": "document",
-                "sec-fetch-mode": "navigate",
-                "sec-fetch-site": "none",
-                "sec-fetch-user": "?1",
                 "upgrade-insecure-requests": "1",
                 "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) "
                               "Chrome/81.0.4044.138 Safari/537.36 ",
